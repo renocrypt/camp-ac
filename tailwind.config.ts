@@ -1,4 +1,11 @@
 /** @type {import('tailwindcss').Config} */
+const isGithubActions = process.env.GITHUB_ACTIONS || false;
+let basePath = "/";
+if (isGithubActions) {
+  const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
+  basePath = `/${repo}`
+}
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -30,11 +37,11 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'bg-img-1': "url('img-1.png')",
-        'bg-img-2': "url('img-2.png')",
-        'feature-bg': "url('feature-bg.png')",
-        pattern: "url('pattern.png')",
-        'pattern-2': "url('pattern-bg.png')",
+        'bg-img-1': `url('${basePath}img-1.png')`,
+        'bg-img-2': `url('${basePath}img-2.png')`,
+        'feature-bg': `url('${basePath}feature-bg.png')`,
+        pattern: `url('${basePath}pattern.png')`,
+        'pattern-2': `url('${basePath}pattern-bg.png')`,
       },
       screens: {
         xs: '400px',
