@@ -2,7 +2,7 @@
 const nextConfig = {
   output: "export",
   assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || "",
-  images: { unoptimized: true },
+  images: { unoptimized: true, path: "/" },
   basePath: "/camp-ac",
 };
 
