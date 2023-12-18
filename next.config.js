@@ -12,8 +12,6 @@ const nextConfig = {
   // assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || "",
   images: {
     unoptimized: true,
-    loader: "imgix",
-    path: "https://renocrypt.github.io/camp-ac",
   },
   basePath: basePath,
 };
